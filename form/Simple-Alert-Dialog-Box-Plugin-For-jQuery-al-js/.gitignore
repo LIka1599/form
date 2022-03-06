@@ -1,0 +1,17 @@
+.idea/.name
+.idea/workspace.xml
+.idea/al.iml
+.idea/deployment.xml
+.idea/encodings.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+.idea/misc.xml
+.idea/misc.xml
+node_modules
+node_modules/*
+.idea/jsLibraryMappings.xml
+
+.idea/libraries/al_node_modules.xml
+
+npm-debug.log

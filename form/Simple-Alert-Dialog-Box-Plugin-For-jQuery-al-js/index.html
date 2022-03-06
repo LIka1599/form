@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="src/al.css" />
+	<script src="lib/jquery-1.11.2.min.js"></script>
+    <script src="src/al.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1 class="page-header">al jQuery plugin</h1>
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="test-title" class="col-lg-2 control-label">Title</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="test-title" placeholder="Title">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="test-description" class="col-lg-2 control-label">Description</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="test-description" placeholder="Description">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="test-description" class="col-lg-2 control-label">Seconds</label>
+                        <div class="col-lg-10">
+                            <select id="test-seconds" class="form-control">
+                                <option value="infinite">infinite</option>
+                                <option value="3">3</option>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="test-description" class="col-lg-2 control-label">Context</label>
+                        <div class="col-lg-10">
+                            <select id="test-context" class="form-control">
+                                <option value="default">default</option>
+                                <option value="success">success</option>
+                                <option value="warning">warning</option>
+                                <option value="error">error</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="button" class="btn btn-default pull-left" id="alert-button">Trigger Alert</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="alBox"></div>
+
+<script>
+
+    $(document).on("click", "#alert-button", function(e) {
+        e.preventDefault();
+        var test_title = $("#test-title").val() || "Success!";
+        var test_description = $("#test-description").val() || "This is an example of a timed alert. It will dismiss after the specified seconds.";
+        var test_seconds = $("#test-seconds").val() || 3;
+        var test_context = $("#test-context").val();
+
+        $("#alBox").al({
+            context: test_context,
+            text: {
+                title: test_title,
+                description: test_description
+            },
+            seconds: test_seconds
+        });
+    });
+
+</script>
+
+</body>
+</html>

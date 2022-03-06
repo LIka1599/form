@@ -1,0 +1,2 @@
+Ошибка подключения базы данных в C:\OpenServer\domains\form\inc\lib.inc.php: 125 
+SQLSTATE[HY000] [1049] Unknown database 'form2' в C:\OpenServer\domains\form\inc\lib.inc.php: 20 
